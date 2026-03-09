@@ -1,10 +1,10 @@
 # Shopify Merchant Sales Intelligence Agent
 
+### [PROJECT IDEAS](./idea_en.md) | [项目思路-中文](./idea-cn.md)
+
 ## Who Can Use This System
 
 While building it, I realized the same system could actually be useful for multiple players in the Shopify ecosystem.
-
-## [IDEA-EN](./idea-en.md) | [项目构想-中文](./idea-cn.md)
 
 **1️⃣ Shopify itself**
 It could identify merchants who might benefit from products like Shopify Email or Shopify POS.
