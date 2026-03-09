@@ -1,0 +1,350 @@
+[
+  {
+    "merchant": {
+      "business_name": "Mccc Sportswear",
+      "domain": "mccc-sportswear.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Mccc Sportswear is a fashion-forward activewear brand selling seasonal clothing across men's and women's categories. With minimal marketing tech (Google Analytics + Meta Pixel only), they are leaving email revenue and repeat purchases uncaptured.",
+      "PAIN POINTS DETECTED": [
+        "No email marketing tool — zero automated customer communication",
+        "No loyalty program for a repeat-purchase product category",
+        "No review app — existing reviews not being displayed or amplified",
+        "No abandoned cart recovery — lost revenue every day"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 7,
+        "reasoning": "Low-tech fashion brand with no email marketing or loyalty program — clear stack gap with a fashion-active audience."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Sportswear is a repeat-purchase category — customers need new pieces every season",
+        "With Meta Pixel active you're running paid ads, but without email you can't retain what you acquire",
+        "320 reviews sitting invisible is a conversion problem on every product page"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "Pre-season launch (Jan for spring, Aug for fall) when new drops go live",
+        "value_prop": "Build the email + loyalty engine that turns one-time buyers into seasonal regulars"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "shoplsdcouture.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "LSD Couture is a bold fashion house offering custom gowns and statement pieces at a high AOV ($120–$850). They run Klaviyo but have no loyalty program or dedicated review platform — a significant gap for a brand whose clients often make multiple occasion purchases.",
+      "PAIN POINTS DETECTED": [
+        "No loyalty program despite high AOV and repeat occasion-wear purchases",
+        "No review app — 640 reviews not being surfaced on product pages",
+        "No referral mechanic — satisfied couture clients are the best word-of-mouth channel",
+        "No post-purchase sequence for custom gown follow-up or upsell"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 8,
+        "reasoning": "High-AOV couture brand with Klaviyo but no loyalty or review app — custom gown customers are perfect for a VIP loyalty tier."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Custom gown clients often return for the next event — a VIP loyalty tier would lock in that repeat",
+        "640 reviews with no display widget means visitors don't see your social proof before bouncing",
+        "A referral program for couture clients can replace paid acquisition entirely"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "Pre-event season (March for spring galas, October for holiday events)",
+        "value_prop": "Turn your couture clientele into a VIP loyalty community — referrals, rewards, and review display in one app"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "theaestheticsloft.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "The Aesthetics Loft is a professional skincare clinic in Milford, CT selling both in-clinic treatments and at-home products via Shopify. With only Google Analytics installed, they have no email marketing, no loyalty, and no automated follow-up — leaving significant recurring revenue on the table.",
+      "PAIN POINTS DETECTED": [
+        "No email marketing — clinic clients receive zero automated post-treatment follow-up",
+        "No loyalty program for a high-frequency, recurring-service business model",
+        "No review display app — 215 reviews not shown on product/service pages",
+        "No membership or subscription mechanic despite being an ideal use case"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 7,
+        "reasoning": "Local beauty clinic with Shopify store and minimal tech — email and loyalty would transform one-time clients into recurring members."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Clinic clients are the highest-loyalty customer type — a membership program is the obvious next step",
+        "Post-treatment email sequences (product recommendations, rebooking reminders) are leaving revenue uncaptured",
+        "215 reviews with no display widget means new visitors don't see your social proof"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "New Year (skin resolution season) and pre-summer (SPF + brightening treatments)",
+        "value_prop": "Turn clinic visits into a recurring membership model — loyalty + automated rebooking flows in one app"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "theskinbarmedispa.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "TheSkinBar Knoxville is a high-end medical spa with a $114k/mo technology investment, nearly 2,000 reviews, active Klaviyo, and Gorgias for client support. Despite a sophisticated stack they have no loyalty or membership program — a critical gap for a business where client LTV can exceed $5,000.",
+      "PAIN POINTS DETECTED": [
+        "No loyalty program for a high-LTV medical spa client base — missing recurring membership revenue",
+        "No referral mechanic despite medispa clients being natural word-of-mouth advocates",
+        "Gorgias cost rising without a self-serve loyalty portal to answer common questions",
+        "No VIP tier to retain top-spending clients"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 9,
+        "reasoning": "High-spend medispa ($114k tech spend) with Klaviyo and Gorgias but no loyalty program — extremely high LTV clients with zero retention mechanic."
+      },
+      "PERSONALIZATION HOOKS": [
+        "With $114k in monthly tech spend you're clearly investing in growth — loyalty is the missing retention layer",
+        "Medispa clients with $1,200 treatments are the highest-LTV customers in beauty — a VIP tier would lock them in",
+        "Nearly 2,000 reviews means you have a loyal client base that isn't being formally rewarded"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "January (new year aesthetic resolutions) and September (pre-holiday treatment rush)",
+        "value_prop": "Build the VIP membership layer your high-LTV medispa clients deserve — loyalty + referrals connected to Klaviyo"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "obroi.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Obroi is a multi-category fashion retailer serving women, men, and kids with trend-led collections at accessible price points ($18–$120). With only Google Analytics and Meta Pixel, they have no email automation, no loyalty program, and no review display — leaving repeat purchase revenue uncaptured across all customer segments.",
+      "PAIN POINTS DETECTED": [
+        "No email marketing — no cart recovery, welcome flows, or post-purchase sequences",
+        "No loyalty program despite a multi-category audience with high purchase frequency potential",
+        "No review display app — social proof not visible on product pages",
+        "Broad audience (women, men, kids) not being segmented for targeted email campaigns"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 7,
+        "reasoning": "Multi-category fashion retailer with broad audience and no email or loyalty tools — high volume potential with the right retention stack."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Multi-category fashion shoppers buy across segments — a family points program could 2x basket size",
+        "Without email, every Meta ad acquisition is a one-time transaction",
+        "580 reviews sitting unshown is a conversion problem across your entire catalog"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "Back-to-school (July–Aug) and holiday (Oct–Nov) — when multi-category fashion peaks",
+        "value_prop": "Segment your family audience and automate retention — Klaviyo flows + loyalty for women, men, and kids in one app"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Beyond the Hot Room",
+      "domain": "bthr.store"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Beyond the Hot Room is an online clean beauty and skincare retailer with a curated wellness focus. They use Mailchimp for email (not Klaviyo) and have no loyalty program or review display app — standard gaps for a growing clean beauty brand at this stage.",
+      "PAIN POINTS DETECTED": [
+        "Using Mailchimp — missing Shopify-native cart recovery, browse abandonment, and post-purchase flows",
+        "No loyalty program for a category where brand values (clean, non-toxic) drive strong repeat loyalty",
+        "No review display app — 730 reviews not visible on product pages",
+        "No segmentation by product type (skincare vs. makeup vs. wellness) for targeted campaigns"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 8,
+        "reasoning": "Clean beauty retailer using Mailchimp instead of Klaviyo — missing Shopify-native flows; strong candidate for stack upgrade with loyalty add-on."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Clean beauty customers are among the most loyal in retail — your Mailchimp list is underserved",
+        "Switching from Mailchimp to Shopify-native email unlocks cart recovery for every abandoned checkout",
+        "730 reviews is significant social proof — it just needs to be displayed where shoppers can see it"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "New Year wellness reset (Jan) and Earth Day (April) — peak clean beauty intent moments",
+        "value_prop": "Upgrade from Mailchimp to Klaviyo + loyalty — we migrate your list, build the flows, and add review display in one day"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Yendra Beauty",
+      "domain": "yendrabeauty.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Yendra Beauty is a niche skincare brand targeting athletes and sensitive skin types — a highly engaged, repeat-purchase audience. With 1,100+ reviews and active Klaviyo, they have strong foundations but are missing a loyalty program and review display app, leaving significant retention revenue uncaptured.",
+      "PAIN POINTS DETECTED": [
+        "No loyalty program for a daily-use, repurchase-driven product line (SPF, cleanser, serum)",
+        "No review display app — 1,100+ reviews not prominently shown on product pages",
+        "No referral mechanic despite a passionate athlete community that influences each other's purchases",
+        "No subscription mechanic for daily-use products — Klaviyo flows not paired with subscribe-and-save"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 9,
+        "reasoning": "Niche beauty brand with strong Klaviyo usage, 1,100 reviews, and a loyal athlete community — no loyalty or review app despite a perfect subscription/repeat use case."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Athletes are the most routine-driven consumers — a points program with workout-themed rewards would resonate deeply",
+        "1,100 reviews from a niche audience is exceptional social proof — it needs a display widget to convert",
+        "Your athlete community sells for you — a referral program would capture that word-of-mouth"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "New Year training season (Jan) and pre-summer (May) — when athletes increase workout frequency",
+        "value_prop": "Activate your athlete community — loyalty points, referrals, and review display all connected to Klaviyo"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Frankly Southern Boutique",
+      "domain": "franklysouthernboutique.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Frankly Southern Boutique is a women's fashion boutique with a strong Southern identity and community feel. With only Google Analytics installed, they have no email marketing, no loyalty program, and no review display — the exact profile of a boutique ready for its first retention stack.",
+      "PAIN POINTS DETECTED": [
+        "No email marketing at all — no cart recovery, welcome sequences, or seasonal campaigns",
+        "No loyalty program despite a community-oriented boutique audience that values recognition",
+        "No review display — existing testimonials not being leveraged on product pages",
+        "No gift card promotion mechanic despite 'gift items' being a product category"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 7,
+        "reasoning": "Small women's boutique with minimal tech stack and low tech spend — email + loyalty is the foundational upgrade this stage of boutique typically needs."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Southern boutique customers are deeply loyal to brands that feel personal — a loyalty program is on-brand",
+        "Without email, every seasonal collection launch misses the customers who would most want to know",
+        "Gift items as a category is an underused loyalty trigger — double points on gift purchases drives holiday revenue"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "Southern social season (spring) and holiday gifting (Nov–Dec)",
+        "value_prop": "Build the boutique loyalty community your Southern customers already want — email + points in one afternoon"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "troyabeauty.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Troya Beauty is a premium multi-brand beauty retailer with 2,100+ reviews, active Klaviyo, and Searchanise for product discovery. Despite a strong commercial setup they have no loyalty program or review display app — a clear gap for a store where customers repurchase professional hair and skincare products regularly.",
+      "PAIN POINTS DETECTED": [
+        "No loyalty program despite high repurchase frequency for professional hair and skincare products",
+        "No review display app — 2,100 reviews not shown on product pages",
+        "No referral mechanic — beauty enthusiasts with premium product knowledge are natural referrers",
+        "No subscription mechanic for regularly repurchased products (shampoo, conditioner, treatment kits)"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 8,
+        "reasoning": "Premium multi-brand beauty retailer with Klaviyo and 2,100 reviews but no loyalty or review app — strong candidate with high purchase frequency."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Professional hair care is one of the highest-repurchase beauty categories — loyalty is the obvious move",
+        "2,100 reviews is exceptional for a multi-brand retailer — they need to be visible on every product page",
+        "Beauty enthusiasts who discover a premium retailer tell their friends — a referral program would capture that"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "New Year hair refresh (Jan) and pre-summer (April–May) — peak hair treatment seasons",
+        "value_prop": "Turn your 2,100 reviews into conversion drivers and add loyalty for your repeat hair care buyers"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Mavenry",
+      "domain": "mavenry.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Mavenry is an Egyptian fashion concept store with a curated, editorial approach to contemporary fashion from independent designers. With only Google Analytics and Meta Pixel installed, they have no email marketing, no loyalty program, and no review app — significant gaps for a brand whose positioning depends on customer relationships.",
+      "PAIN POINTS DETECTED": [
+        "No email marketing — curated fashion drops and designer spotlights are not being communicated to past buyers",
+        "No loyalty program despite a fashion-forward audience that values editorial exclusivity",
+        "No review app — 185 reviews not amplified or displayed",
+        "No early access or VIP mechanic for limited edition and designer drops"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 7,
+        "reasoning": "Fashion concept store with curated designer positioning and minimal tech stack — loyalty would strengthen the editorial-brand relationship with their audience."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Concept store audiences expect curation and early access — a VIP loyalty tier is on-brand",
+        "Designer spotlight content translates perfectly into email campaigns that drive traffic to new arrivals",
+        "Without email, every limited edition drop is invisible to past buyers until they see a paid ad"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "New season launches (Feb for spring, Sep for fall) — when concept stores have highest new-arrival intent",
+        "value_prop": "Build the editorial VIP program your concept store audience expects — early access, curation drops, and designer loyalty in one app"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Wing+Weft Gloves",
+      "domain": "wingweftgloves.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "Wing+Weft Gloves is a specialty fashion brand offering customized and fashion gloves as statement accessories. With Klaviyo active but no loyalty or review app, their main opportunity is leveraging their gifting appeal and post-purchase referral potential rather than repeat purchase frequency.",
+      "PAIN POINTS DETECTED": [
+        "Low natural repurchase frequency for custom gloves — loyalty must be built around gifting and referrals",
+        "No review display app — 410 reviews not surfaced on product pages for a considered-purchase item",
+        "No referral mechanic despite custom gloves being a highly giftable, shareable product",
+        "No gift messaging or gift loyalty mechanic for the holiday and occasion-gifting segments"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 6,
+        "reasoning": "Niche fashion brand with Klaviyo but low repurchase frequency (custom gloves are occasional purchases) — moderate opportunity, gifting angle is strongest."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Custom gloves are a perfect gifting product — a gift-double-points mechanic would unlock holiday revenue",
+        "410 reviews for a niche product is strong social proof — it needs to be displayed to convert",
+        "Buyers who gift Wing+Weft gloves expose the brand to new buyers — a referral mechanic captures that"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "Holiday gifting season (Oct–Dec) and occasion events (Valentine's Day, Mother's Day)",
+        "value_prop": "Turn your gifting audience into a referral engine — review display + gift loyalty mechanic connected to Klaviyo"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Raawalchemy.com",
+      "domain": "raawalchemy.com"
+    },
+    "analysis": {
+      "MERCHANT SNAPSHOT": "RAAW Alchemy is a science-backed sustainable beauty brand with 1,560 reviews, active Klaviyo, and a premium price point ($38–$145). Despite strong marketing foundations they have no loyalty program or review display app — a significant gap for a brand whose sustainability positioning drives deep customer loyalty.",
+      "PAIN POINTS DETECTED": [
+        "No loyalty program for a sustainability-driven audience that wants to feel rewarded for conscious purchasing",
+        "No review display app — 1,560 reviews not visible on product pages at point of purchase",
+        "No referral mechanic despite sustainability-conscious beauty buyers being strong word-of-mouth advocates",
+        "No subscription mechanic for botanical serums and oils that are daily-use repurchase items"
+      ],
+      "OPPORTUNITY SCORE": {
+        "score": 9,
+        "reasoning": "Premium sustainable beauty brand with strong Klaviyo usage and 1,500+ reviews but no loyalty or review app — ideal fit with high-LTV clean beauty audience."
+      },
+      "PERSONALIZATION HOOKS": [
+        "Sustainability-driven beauty buyers are among the most loyal consumers — a values-aligned loyalty program is on-brand",
+        "1,560 reviews is significant — a display widget on every PDP would lift conversion materially",
+        "Clean beauty customers who find a brand they trust refer aggressively — you need a referral mechanic"
+      ],
+      "RECOMMENDED APPROACH": {
+        "channel": "email",
+        "timing": "New Year (clean beauty reset) and Earth Month (April) — peak sustainable beauty intent",
+        "value_prop": "Build the values-aligned loyalty program your RAAW community deserves — review display + sustainable points connected to Klaviyo"
+      }
+    }
+  }
+]

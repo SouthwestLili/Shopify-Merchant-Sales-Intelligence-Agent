@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Intelligence Dashboard — Lili's Company</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <style>
+    :root {
+      --bg: #f0f2f5;
+      --card-bg: #ffffff;
+      --header-bg: #0d1117;
+      --accent: #6366f1;
+      --accent-light: #eef2ff;
+      --score-high: #16a34a;
+      --score-mid: #2563eb;
+      --score-low: #64748b;
+      --badge-fashion: #7c3aed;
+      --badge-beauty: #db2777;
+      --badge-other: #0891b2;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: #1e293b;
+    }
+
+    /* ── Header ─────────────────────────── */
+    .app-header {
+      background: var(--header-bg);
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .app-header .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+    .app-header .logo span { color: var(--accent); }
+    .app-header .subtitle {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: 1px;
+    }
+
+    /* ── Stat cards ─────────────────────── */
+    .stat-row { padding: 1.2rem 2rem 0; gap: 1rem; display: flex; flex-wrap: wrap; }
+    .stat-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 0.9rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.07);
+      min-width: 160px;
+    }
+    .stat-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .stat-label { font-size: 0.72rem; color: #64748b; font-weight: 500; text-transform: uppercase; letter-spacing: .5px; }
+    .stat-value { font-size: 1.7rem; font-weight: 700; line-height: 1; }
+
+    /* ── Filter bar ─────────────────────── */
+    .filter-bar {
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-bar input, .filter-bar select {
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.875rem;
+      background: #fff;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .filter-bar input:focus, .filter-bar select:focus { border-color: var(--accent); }
+    .filter-bar input { min-width: 200px; }
+    .filter-count {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    /* ── View toggle ────────────────────── */
+    .view-toggle {
+      margin-left: auto;
+      display: flex;
+      gap: 0;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .view-btn {
+      padding: 0.42rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      color: #64748b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background .15s, color .15s;
+      border-right: 1.5px solid #e2e8f0;
+    }
+    .view-btn:last-child { border-right: none; }
+    .view-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+    .view-btn:not(.active):hover {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    /* ── 3D Plot container ──────────────── */
+    #plot3d {
+      display: none;
+      height: 560px;
+      padding: 0 2rem 2rem;
+    }
+    #plot3dInner {
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* ── Merchant grid ──────────────────── */
+    .merchant-grid {
+      padding: 0 2rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .merchant-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      border: 1.5px solid transparent;
+    }
+    .merchant-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      border-color: var(--accent);
+    }
+
+    /* Score badge */
+    .score-circle {
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 800; flex-shrink: 0; color: #fff;
+    }
+    .score-high { background: var(--score-high); }
+    .score-mid  { background: var(--score-mid); }
+    .score-low  { background: var(--score-low); }
+
+    .card-title { font-weight: 700; font-size: 1rem; line-height: 1.3; }
+    .card-domain { font-size: 0.78rem; color: #64748b; }
+
+    /* Industry badge */
+    .badge-fashion { background: #ede9fe; color: var(--badge-fashion); }
+    .badge-beauty  { background: #fce7f3; color: var(--badge-beauty); }
+    .badge-other   { background: #e0f2fe; color: var(--badge-other); }
+    .industry-badge { font-size: 0.7rem; font-weight: 600; padding: 0.2em 0.6em; border-radius: 20px; }
+
+    .card-snapshot {
+      font-size: 0.82rem; color: #475569; line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .tool-chip {
+      display: inline-block; font-size: 0.68rem; font-weight: 500;
+      background: #f1f5f9; color: #334155; border-radius: 4px;
+      padding: 0.15em 0.5em; margin: 1px;
+    }
+
+    .card-footer-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: auto; padding-top: 0.5rem;
+    }
+    .price-tag { font-size: 0.75rem; color: #475569; }
+    .btn-view {
+      font-size: 0.78rem; padding: 0.35rem 0.9rem;
+      background: var(--accent-light); color: var(--accent);
+      border: none; border-radius: 7px; font-weight: 600;
+      transition: background .15s;
+    }
+    .btn-view:hover { background: var(--accent); color: #fff; }
+
+    /* No-email indicator */
+    .no-email-tag { font-size: 0.7rem; color: #94a3b8; }
+
+    /* ── Detail modal ───────────────────── */
+    .modal-content { border-radius: 16px; border: none; }
+    .modal-header {
+      background: var(--header-bg); color: #fff;
+      border-radius: 16px 16px 0 0; padding: 1.25rem 1.5rem;
+    }
+    .modal-header .btn-close { filter: invert(1); }
+    .modal-domain { font-size: 0.8rem; color: #94a3b8; }
+
+    .modal-score-bar {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.9rem 1.5rem; background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .section-label {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .8px; color: #94a3b8; margin-bottom: 0.4rem;
+    }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      padding: 0.45rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.85rem;
+    }
+    .pain-item:last-child { border-bottom: none; }
+    .pain-dot { color: #ef4444; margin-top: 2px; flex-shrink: 0; }
+
+    .hook-item {
+      font-size: 0.82rem; color: #475569;
+      padding: 0.3rem 0.6rem; background: #f8fafc; border-radius: 6px;
+      margin-bottom: 0.3rem;
+    }
+    .hook-item::before { content: "→ "; color: var(--accent); font-weight: 700; }
+
+    /* Email panel */
+    .email-tab-btn {
+      flex: 1; border: 1.5px solid #e2e8f0; background: #fff;
+      border-radius: 8px; padding: 0.4rem; font-size: 0.8rem; font-weight: 600;
+      color: #64748b; cursor: pointer; transition: all .15s;
+    }
+    .email-tab-btn.active {
+      background: var(--accent); color: #fff; border-color: var(--accent);
+    }
+
+    .email-subject {
+      font-weight: 700; font-size: 0.92rem;
+      padding: 0.6rem 0.8rem; background: #f1f5f9;
+      border-radius: 8px; margin-bottom: 0.6rem;
+    }
+    .email-body-text {
+      white-space: pre-wrap; font-size: 0.83rem; color: #334155;
+      line-height: 1.65; max-height: 240px; overflow-y: auto;
+      padding: 0.6rem 0.8rem; background: #fafafa;
+      border: 1px solid #e2e8f0; border-radius: 8px;
+    }
+    .btn-copy {
+      font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 6px;
+    }
+
+    /* Empty state */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center; padding: 4rem 1rem; color: #94a3b8;
+    }
+    .empty-state i { font-size: 3rem; margin-bottom: 0.75rem; display: block; }
+
+    /* ── Loading overlay ────────────────── */
+    #loading {
+      position: fixed; inset: 0; background: rgba(255,255,255,.85);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; flex-direction: column; gap: 1rem;
+    }
+    #loading p { color: #64748b; font-size: 0.9rem; }
+
+    @media (max-width: 600px) {
+      .stat-row, .filter-bar, .merchant-grid { padding-left: 1rem; padding-right: 1rem; }
+      .app-header { padding: 1rem; }
+      #plot3d { padding-left: 1rem; padding-right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div id="loading">
+  <div class="spinner-border text-primary" style="width:2.5rem;height:2.5rem;" role="status"></div>
+  <p>Loading merchant data…</p>
+</div>
+
+<!-- Header -->
+<header class="app-header">
+  <div>
+    <div class="logo"><i class="bi bi-graph-up-arrow me-2"></i>Sales Intelligence <span>Dashboard</span></div>
+    <div class="subtitle">Lili's Company — Shopify Merchant Outreach</div>
+  </div>
+</header>
+
+<!-- Stat cards -->
+<div class="stat-row" id="statRow">
+  <div class="stat-card">
+    <div class="stat-icon" style="background:#e0f2fe;color:#0369a1"><i class="bi bi-people-fill"></i></div>
+    <div><div class="stat-label">Merchants Analyzed</div><div class="stat-value" id="statTotal">—</div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:#dcfce7;color:#15803d"><i class="bi bi-star-fill"></i></div>
+    <div><div class="stat-label">Qualified (score ≥ 7)</div><div class="stat-value" id="statQualified">—</div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:#ede9fe;color:#6d28d9"><i class="bi bi-envelope-check-fill"></i></div>
+    <div><div class="stat-label">Emails Generated</div><div class="stat-value" id="statEmailed">—</div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:#fff7ed;color:#c2410c"><i class="bi bi-exclamation-triangle-fill"></i></div>
+    <div><div class="stat-label">Avg Opportunity Score</div><div class="stat-value" id="statAvg">—</div></div>
+  </div>
+</div>
+
+<!-- Filter bar -->
+<div class="filter-bar">
+  <input type="text" id="searchInput" placeholder="🔍  Search by company or domain…" oninput="applyFilters()" />
+  <select id="scoreFilter" onchange="applyFilters()">
+    <option value="0">All scores</option>
+    <option value="7" selected>Score ≥ 7</option>
+    <option value="8">Score ≥ 8</option>
+    <option value="9">Score ≥ 9</option>
+  </select>
+  <select id="industryFilter" onchange="applyFilters()">
+    <option value="">All industries</option>
+    <option value="fashion">Fashion</option>
+    <option value="beauty">Beauty</option>
+    <option value="other">Other</option>
+  </select>
+  <select id="emailFilter" onchange="applyFilters()">
+    <option value="">All merchants</option>
+    <option value="yes">Has emails</option>
+    <option value="no">No emails yet</option>
+  </select>
+  <span class="filter-count" id="filterCount"></span>
+
+  <!-- View toggle -->
+  <div class="view-toggle">
+    <button class="view-btn active" id="btnList" onclick="switchView('list')">
+      <i class="bi bi-grid-3x3-gap-fill"></i> List
+    </button>
+    <button class="view-btn" id="btn3d" onclick="switchView('3d')">
+      <i class="bi bi-badge-3d-fill"></i> 3D View
+    </button>
+  </div>
+</div>
+
+<!-- 3D Plot container -->
+<div id="plot3d">
+  <div id="plot3dInner"></div>
+</div>
+
+<!-- Merchant grid -->
+<div class="merchant-grid" id="merchantGrid"></div>
+
+<!-- ── Detail modal ─────────────────────────────────────────────────────── -->
+<div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Modal header -->
+      <div class="modal-header">
+        <div>
+          <h5 class="modal-title mb-0" id="modalTitle">—</h5>
+          <div class="modal-domain" id="modalDomain"></div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Score + meta bar -->
+      <div class="modal-score-bar">
+        <div class="score-circle" id="modalScoreCircle">—</div>
+        <div>
+          <div style="font-size:.75rem;color:#64748b;font-weight:600">OPPORTUNITY SCORE</div>
+          <div style="font-size:.85rem;color:#334155" id="modalScoreReason"></div>
+        </div>
+        <div class="ms-auto d-flex gap-2 flex-wrap" id="modalMeta"></div>
+      </div>
+
+      <!-- Modal body: two columns -->
+      <div class="modal-body p-0">
+        <div class="row g-0" style="min-height:420px">
+
+          <!-- Left: Analysis -->
+          <div class="col-lg-5 p-4 border-end" style="background:#fafafa">
+            <div class="mb-4">
+              <div class="section-label">Merchant Snapshot</div>
+              <p style="font-size:.875rem;color:#334155;line-height:1.6" id="modalSnapshot">—</p>
+            </div>
+            <div class="mb-4">
+              <div class="section-label">Pain Points Detected</div>
+              <div id="modalPainPoints"></div>
+            </div>
+            <div class="mb-4">
+              <div class="section-label">Personalization Hooks</div>
+              <div id="modalHooks"></div>
+            </div>
+            <div>
+              <div class="section-label">Recommended Approach</div>
+              <div id="modalApproach" style="font-size:.83rem;color:#475569"></div>
+            </div>
+          </div>
+
+          <!-- Right: Emails -->
+          <div class="col-lg-7 p-4 d-flex flex-column">
+            <div class="section-label mb-2">Cold Email Versions</div>
+            <div id="noEmailNote" class="text-muted" style="font-size:.85rem;display:none">
+              <i class="bi bi-info-circle me-1"></i>
+              No emails generated yet — run <code>sales_agent.py</code> or <code>generate_emails.py</code> first.
+            </div>
+            <div id="emailPanel" style="display:none">
+              <!-- A/B/C tabs -->
+              <div class="d-flex gap-2 mb-3" id="emailTabs">
+                <button class="email-tab-btn active" onclick="switchEmail('A', this)">
+                  <i class="bi bi-lightning-fill me-1"></i>A — Problem
+                </button>
+                <button class="email-tab-btn" onclick="switchEmail('B', this)">
+                  <i class="bi bi-shield-check me-1"></i>B — Social Proof
+                </button>
+                <button class="email-tab-btn" onclick="switchEmail('C', this)">
+                  <i class="bi bi-question-circle me-1"></i>C — Curiosity
+                </button>
+              </div>
+              <div class="email-subject" id="emailSubject"></div>
+              <div class="email-body-text" id="emailBody"></div>
+              <div class="d-flex justify-content-end mt-2 gap-2">
+                <button class="btn btn-sm btn-outline-secondary btn-copy"
+                        onclick="copyEmail()">
+                  <i class="bi bi-clipboard me-1"></i>Copy email
+                </button>
+                <span id="copyConfirm" style="font-size:.75rem;color:#16a34a;display:none;align-items:center">
+                  <i class="bi bi-check-circle-fill me-1"></i>Copied!
+                </span>
+              </div>
+            </div>
+
+            <!-- Tools detected -->
+            <div class="mt-auto pt-4">
+              <div class="section-label">Tools Detected</div>
+              <div id="modalTools"></div>
+              <div class="mt-3">
+                <div class="section-label">Products / Categories</div>
+                <div id="modalProducts" style="font-size:.82rem;color:#475569"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ── State ────────────────────────────────────────────────────────────────
+  let ALL_MERCHANTS = [];
+  let CURRENT_EMAILS = {};
+  let CURRENT_EMAIL_KEY = "A";
+  let CURRENT_VIEW = "list";
+  const modal = new bootstrap.Modal(document.getElementById("detailModal"));
+
+  // ── Boot ─────────────────────────────────────────────────────────────────
+  async function init() {
+    const [stats, merchants] = await Promise.all([
+      fetch("/api/stats").then(r => r.json()),
+      fetch("/api/merchants").then(r => r.json()),
+    ]);
+
+    document.getElementById("statTotal").textContent     = stats.total;
+    document.getElementById("statQualified").textContent = stats.qualified;
+    document.getElementById("statEmailed").textContent   = stats.emailed;
+
+    const scores = merchants.map(m => m.opportunity_score).filter(s => s > 0);
+    const avg = scores.length ? (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1) : "—";
+    document.getElementById("statAvg").textContent = avg;
+
+    ALL_MERCHANTS = merchants;
+    applyFilters();
+    document.getElementById("loading").style.display = "none";
+  }
+
+  // ── View toggle ───────────────────────────────────────────────────────────
+  function switchView(view) {
+    CURRENT_VIEW = view;
+    document.getElementById("btnList").classList.toggle("active", view === "list");
+    document.getElementById("btn3d").classList.toggle("active",   view === "3d");
+    document.getElementById("merchantGrid").style.display = view === "list" ? "" : "none";
+    document.getElementById("plot3d").style.display       = view === "3d"   ? "" : "none";
+    if (view === "3d") {
+      const filtered = getFiltered();
+      renderPlot3D(filtered);
+    }
+  }
+
+  // ── Filtering ────────────────────────────────────────────────────────────
+  function getFiltered() {
+    const q        = document.getElementById("searchInput").value.toLowerCase();
+    const minScore = parseInt(document.getElementById("scoreFilter").value, 10) || 0;
+    const industry = document.getElementById("industryFilter").value;
+    const emailF   = document.getElementById("emailFilter").value;
+
+    return ALL_MERCHANTS.filter(m => {
+      const matchQ  = !q || m.business_name.toLowerCase().includes(q) || m.domain.toLowerCase().includes(q);
+      const matchSc = m.opportunity_score >= minScore;
+      const matchIn = !industry || m.industry === industry;
+      const hasEmail = Object.keys(m.emails || {}).length > 0;
+      const matchEm = !emailF || (emailF === "yes" ? hasEmail : !hasEmail);
+      return matchQ && matchSc && matchIn && matchEm;
+    });
+  }
+
+  function applyFilters() {
+    const filtered = getFiltered();
+    document.getElementById("filterCount").textContent =
+      `${filtered.length} merchant${filtered.length !== 1 ? "s" : ""}`;
+    if (CURRENT_VIEW === "list") {
+      renderGrid(filtered);
+    } else {
+      renderPlot3D(filtered);
+    }
+  }
+
+  // ── 3D Plot ───────────────────────────────────────────────────────────────
+  function renderPlot3D(merchants) {
+    const COLOR_MAP = {
+      beauty:  "#db2777",
+      fashion: "#7c3aed",
+      other:   "#0891b2",
+    };
+
+    // Group into one trace per industry for legend
+    const industries = ["beauty", "fashion", "other"];
+    const traces = industries.map(ind => {
+      const ms = merchants.filter(m => m.industry === ind);
+      return {
+        type: "scatter3d",
+        mode: "markers",
+        name: ind.charAt(0).toUpperCase() + ind.slice(1),
+        x: ms.map(m => m.opportunity_score),
+        y: ms.map(m => parseFloat(m.tech_spend) || 0),
+        z: ms.map(m => (m.pain_points || []).length),
+        text: ms.map(m => m.business_name || m.domain),
+        customdata: ms.map(m => m.domain),
+        hovertemplate: [
+          "<b>%{text}</b>",
+          "Score: <b>%{x}</b>",
+          "Tech Spend: $%{y:,}",
+          "Pain Points: %{z}",
+          "<extra></extra>",
+        ].join("<br>"),
+        marker: {
+          size: ms.map(m => 5 + (m.opportunity_score || 5) * 1.4),
+          color: COLOR_MAP[ind] || COLOR_MAP.other,
+          opacity: 0.88,
+          line: { color: "rgba(255,255,255,0.4)", width: 1 },
+        },
+      };
+    });
+
+    const axisStyle = {
+      gridcolor: "#1e293b",
+      zerolinecolor: "#334155",
+      tickfont: { color: "#94a3b8", size: 11 },
+      titlefont: { color: "#cbd5e1", size: 12 },
+    };
+
+    const layout = {
+      paper_bgcolor: "#0d1117",
+      scene: {
+        bgcolor: "#0d1117",
+        xaxis: { ...axisStyle, title: "Opportunity Score", range: [0, 10] },
+        yaxis: { ...axisStyle, title: "Tech Spend ($)" },
+        zaxis: { ...axisStyle, title: "Pain Points Detected" },
+        camera: { eye: { x: 1.6, y: 1.6, z: 1.1 } },
+      },
+      legend: {
+        font: { color: "#e2e8f0", size: 12 },
+        bgcolor: "rgba(13,17,23,0.7)",
+        bordercolor: "#1e293b",
+        borderwidth: 1,
+      },
+      margin: { l: 0, r: 0, t: 10, b: 0 },
+      font: { color: "#e2e8f0" },
+    };
+
+    Plotly.react("plot3dInner", traces, layout, { responsive: true, displaylogo: false });
+
+    // Click → open detail modal
+    const plotEl = document.getElementById("plot3dInner");
+    plotEl.removeAllListeners && plotEl.removeAllListeners("plotly_click");
+    plotEl.on("plotly_click", function(data) {
+      if (!data.points.length) return;
+      const domain = data.points[0].customdata;
+      const m = ALL_MERCHANTS.find(x => x.domain === domain);
+      if (m) showModal(m);
+    });
+  }
+
+  // ── Grid rendering ────────────────────────────────────────────────────────
+  function scoreClass(s) {
+    if (s >= 9) return "score-high";
+    if (s >= 7) return "score-mid";
+    return "score-low";
+  }
+
+  function industryBadge(ind) {
+    const map = {
+      fashion: ["badge-fashion", "Fashion"],
+      beauty:  ["badge-beauty",  "Beauty"],
+      other:   ["badge-other",   "Other"],
+    };
+    const [cls, label] = map[ind] || map.other;
+    return `<span class="industry-badge ${cls}">${label}</span>`;
+  }
+
+  function renderGrid(merchants) {
+    const grid = document.getElementById("merchantGrid");
+    if (!merchants.length) {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <i class="bi bi-search"></i>
+          <div style="font-size:1.1rem;font-weight:600;color:#475569">No merchants match your filters</div>
+          <div style="font-size:.85rem;margin-top:.4rem">Try adjusting the score threshold or industry filter</div>
+        </div>`;
+      grid._filtered = [];
+      return;
+    }
+
+    grid.innerHTML = merchants.map((m, idx) => {
+      const hasEmails = Object.keys(m.emails || {}).length > 0;
+      const tools = (m.tools_detected || []).slice(0, 4)
+        .map(t => `<span class="tool-chip">${escHtml(t)}</span>`).join("");
+      const moreTools = (m.tools_detected || []).length > 4
+        ? `<span class="tool-chip">+${m.tools_detected.length - 4} more</span>` : "";
+
+      return `
+        <div class="merchant-card" onclick="openDetail(${idx})">
+          <div class="d-flex align-items-start gap-3">
+            <div class="score-circle ${scoreClass(m.opportunity_score)}">${m.opportunity_score || "?"}</div>
+            <div>
+              <div class="card-title">${escHtml(m.business_name)}</div>
+              <div class="card-domain">${escHtml(m.domain)}</div>
+              <div class="d-flex align-items-center gap-1 mt-1 flex-wrap">
+                ${industryBadge(m.industry)}
+                ${m.country ? `<span style="font-size:.72rem;color:#64748b"><i class="bi bi-geo-alt-fill"></i> ${escHtml(m.country)}</span>` : ""}
+                ${m.price_range ? `<span style="font-size:.72rem;color:#64748b">· ${escHtml(m.price_range)}</span>` : ""}
+              </div>
+            </div>
+          </div>
+
+          ${m.snapshot ? `<p class="card-snapshot">${escHtml(m.snapshot)}</p>` : ""}
+          ${tools || moreTools ? `<div>${tools}${moreTools}</div>` : ""}
+
+          <div class="card-footer-row">
+            <div>
+              ${m.pain_points && m.pain_points.length
+                ? `<span style="font-size:.72rem;color:#ef4444"><i class="bi bi-exclamation-circle me-1"></i>${m.pain_points.length} pain point${m.pain_points.length > 1 ? "s" : ""} detected</span>`
+                : ""}
+            </div>
+            ${hasEmails
+              ? `<button class="btn-view"><i class="bi bi-envelope me-1"></i>View Emails</button>`
+              : `<span class="no-email-tag"><i class="bi bi-hourglass me-1"></i>No emails yet</span>`}
+          </div>
+        </div>`;
+    }).join("");
+
+    grid._filtered = merchants;
+  }
+
+  // ── Detail modal ─────────────────────────────────────────────────────────
+  function openDetail(idx) {
+    const grid = document.getElementById("merchantGrid");
+    const m = (grid._filtered || ALL_MERCHANTS)[idx];
+    if (m) showModal(m);
+  }
+
+  function showModal(m) {
+    document.getElementById("modalTitle").textContent = m.business_name;
+    document.getElementById("modalDomain").innerHTML  =
+      `<a href="https://${m.domain}" target="_blank" style="color:#94a3b8">${m.domain} <i class="bi bi-box-arrow-up-right" style="font-size:.7rem"></i></a>`;
+
+    const sc = document.getElementById("modalScoreCircle");
+    sc.textContent = m.opportunity_score || "?";
+    sc.className   = `score-circle ${scoreClass(m.opportunity_score)}`;
+    document.getElementById("modalScoreReason").textContent = m.score_reasoning || "";
+
+    const meta = document.getElementById("modalMeta");
+    meta.innerHTML = [
+      m.industry    ? industryBadge(m.industry) : "",
+      m.country     ? `<span class="badge bg-light text-dark border" style="font-weight:500">${escHtml(m.country)}</span>` : "",
+      m.price_range ? `<span class="badge bg-light text-dark border" style="font-weight:500">${escHtml(m.price_range)}</span>` : "",
+    ].join("");
+
+    document.getElementById("modalSnapshot").textContent = m.snapshot || "—";
+
+    document.getElementById("modalPainPoints").innerHTML =
+      (m.pain_points || []).map(p =>
+        `<div class="pain-item"><i class="bi bi-x-circle-fill pain-dot"></i><span>${escHtml(p)}</span></div>`
+      ).join("") || `<span style="font-size:.82rem;color:#94a3b8">None detected</span>`;
+
+    document.getElementById("modalHooks").innerHTML =
+      (m.hooks || []).map(h =>
+        `<div class="hook-item">${escHtml(h)}</div>`
+      ).join("") || `<span style="font-size:.82rem;color:#94a3b8">None detected</span>`;
+
+    const approach = document.getElementById("modalApproach");
+    if (m.approach_channel || m.approach_timing || m.approach_value) {
+      approach.innerHTML = [
+        m.approach_channel ? `<strong>Channel:</strong> ${escHtml(m.approach_channel)}` : "",
+        m.approach_timing  ? `<strong>Timing:</strong> ${escHtml(m.approach_timing)}`   : "",
+        m.approach_value   ? `<strong>Value prop:</strong> ${escHtml(m.approach_value)}` : "",
+      ].filter(Boolean).join("<br>");
+    } else {
+      approach.textContent = "—";
+    }
+
+    document.getElementById("modalTools").innerHTML =
+      (m.tools_detected || []).length
+        ? (m.tools_detected || []).map(t => `<span class="tool-chip">${escHtml(t)}</span>`).join("")
+        : `<span style="font-size:.82rem;color:#94a3b8">None detected</span>`;
+
+    document.getElementById("modalProducts").textContent =
+      (m.products || []).join(", ") || "—";
+
+    CURRENT_EMAILS   = m.emails || {};
+    CURRENT_EMAIL_KEY = "A";
+    const hasEmails  = Object.keys(CURRENT_EMAILS).length > 0;
+    document.getElementById("noEmailNote").style.display = hasEmails ? "none"  : "block";
+    document.getElementById("emailPanel").style.display  = hasEmails ? "block" : "none";
+    if (hasEmails) {
+      document.querySelectorAll(".email-tab-btn").forEach((b, i) => b.classList.toggle("active", i === 0));
+      renderEmail("A");
+    }
+
+    modal.show();
+  }
+
+  function switchEmail(key, btn) {
+    CURRENT_EMAIL_KEY = key;
+    document.querySelectorAll(".email-tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderEmail(key);
+  }
+
+  function renderEmail(key) {
+    const e = CURRENT_EMAILS[`version_${key}`] || {};
+    document.getElementById("emailSubject").textContent = e.subject || "(no subject)";
+    document.getElementById("emailBody").textContent    = e.body    || "(no body)";
+    document.getElementById("copyConfirm").style.display = "none";
+  }
+
+  function copyEmail() {
+    const e = CURRENT_EMAILS[`version_${CURRENT_EMAIL_KEY}`] || {};
+    navigator.clipboard.writeText(`Subject: ${e.subject || ""}\n\n${e.body || ""}`).then(() => {
+      const el = document.getElementById("copyConfirm");
+      el.style.display = "flex";
+      setTimeout(() => el.style.display = "none", 2000);
+    });
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function escHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  init();
+</script>
+</body>
+</html>

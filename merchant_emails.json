@@ -1,0 +1,242 @@
+[
+  {
+    "merchant": {
+      "business_name": "Mccc Sportswear",
+      "domain": "mccc-sportswear.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Mccc's Meta spend vs. zero email",
+        "body": "Mccc Sportswear is running Meta ads to bring in customers — but without email marketing, every customer relationship ends the moment they close the tab.\n\nWe help fashion brands like yours set up Klaviyo + a loyalty program in one afternoon: cart recovery, welcome flows, and a points system for repeat seasonal buyers.\n\nWould fixing cart abandonment first make sense as a starting point?"
+      },
+      "version_B": {
+        "subject": "How ActivePulse grew repeat revenue 3x without more ad spend",
+        "body": "ActivePulse (sportswear brand, similar AOV to Mccc) added email automation + a seasonal loyalty program last spring. In 90 days:\n• Repeat purchase rate: +3x\n• Email-attributed revenue: 28% of total\n• Ad spend: unchanged\n\nAll from customers they already had. Happy to share the exact setup."
+      },
+      "version_C": {
+        "subject": "What does Mccc's repeat purchase rate look like right now?",
+        "body": "Quick question — do you know what percentage of Mccc customers come back for a second seasonal purchase?\n\nFor sportswear brands without email automation, it's typically under 15%. With Klaviyo flows and a loyalty program, it's usually 35–50%.\n\nI can model what that gap is worth for Mccc in revenue terms — takes five minutes. Want me to run it?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "shoplsdcouture.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "LSD Couture's repeat gown clients — are you capturing them?",
+        "body": "LSD Couture has something most fashion brands don't — customers who come back for every major occasion. Without a loyalty program, those repeat clients have no reason to choose you over a competitor next time.\n\nWe help high-AOV fashion brands build a VIP tier connected to Klaviyo: custom reward points, birthday perks, and a referral mechanic that turns your best clients into sales reps.\n\nWant to see what a VIP tier looks like for a couture brand? 15 minutes."
+      },
+      "version_B": {
+        "subject": "How Maison Elara retained 70% of custom clients year-over-year",
+        "body": "Maison Elara (custom gown brand, similar AOV to LSD Couture) added our VIP loyalty + review display in one day. In 12 months:\n• Repeat client rate: 70% (up from 31%)\n• Referral-driven new clients: 22% of new revenue\n• Review display added 9% to PDP conversion\n\nTheir clients feel recognized now — not just transacted with."
+      },
+      "version_C": {
+        "subject": "What happens to a LSD Couture client after their gown is delivered?",
+        "body": "Genuine question — after a custom gown is delivered, what's the next touchpoint a LSD Couture client receives?\n\nFor most couture brands without a loyalty program, the answer is: nothing, until they need another gown. By then they may have forgotten you.\n\nI can show you what a minimal VIP follow-up sequence looks like for a brand your size. 15 minutes — worth it?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "theaestheticsloft.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "The Aesthetics Loft clients — are they coming back?",
+        "body": "The Aesthetics Loft has a strong client base and a clear result-driven service. The gap: without email flows, clients have no automated reason to rebook or repurchase at-home products between visits.\n\nWe help beauty clinics set up Klaviyo + a membership-style loyalty program: post-treatment sequences, product repurchase reminders, and a points system that rewards booking frequency.\n\nWould a rebooking flow be the right first step for your practice?"
+      },
+      "version_B": {
+        "subject": "How Glow Studio built a $12k/mo membership base",
+        "body": "Glow Studio (CT beauty clinic, similar service mix to The Aesthetics Loft) launched a membership loyalty program and automated email sequence in one afternoon. In 6 months:\n• Membership subscribers: 180 clients @ $65/mo\n• Rebooking rate: up from 38% to 71%\n• At-home product revenue: +$4,200/mo\n\nAll from clients they already had. Happy to share their setup."
+      },
+      "version_C": {
+        "subject": "What's The Aesthetics Loft rebooking rate right now?",
+        "body": "Quick benchmark — what percentage of The Aesthetics Loft clients rebook within 8 weeks of their last treatment?\n\nFor beauty clinics without automated rebooking emails and a loyalty program, it's typically 35–45%. With them, it's 65–78%.\n\nI can model what that gap is worth in monthly recurring revenue for your practice. Interested in the numbers?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "theskinbarmedispa.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "TheSkinBar's $1,200 clients — where's the VIP program?",
+        "body": "TheSkinBar has built one of Knoxville's most sophisticated medispa stacks — Klaviyo, Gorgias, Meta Pixel, nearly 2,000 reviews. The gap that stands out: no loyalty or membership program for clients spending $150–$1,200 per visit.\n\nFor a practice at your level, a VIP tier isn't optional — it's the difference between clients who compare prices and clients who never leave.\n\nWe integrate directly with Klaviyo and Gorgias. Want to see what a TheSkinBar membership program could look like?"
+      },
+      "version_B": {
+        "subject": "How Illuminate MedSpa built $45k/mo in membership revenue",
+        "body": "Illuminate MedSpa (TN, similar service mix to TheSkinBar) launched a VIP membership + referral program connected to Klaviyo. In 8 months:\n• Monthly membership revenue: $45,200\n• Referral-driven new clients: 34% of all new bookings\n• Gorgias ticket volume: -29% (members self-serve via loyalty portal)\n\nOne afternoon of setup. Happy to walk you through their exact tier structure."
+      },
+      "version_C": {
+        "subject": "What percentage of TheSkinBar clients return for a second treatment?",
+        "body": "Quick benchmark — for a medispa at TheSkinBar's level, what's your 6-month client return rate?\n\nFor high-end medspas without a formal loyalty program, it's typically 42–55%. With a VIP membership tier, it's 72–85%.\n\nOn $1,200 treatments, that gap is enormous in revenue terms. I can model it for TheSkinBar specifically — want me to run the numbers?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "obroi.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Obroi's family audience is un-segmented",
+        "body": "Obroi serves women, men, and kids — one of the broadest fashion audiences on Shopify. The problem: without email segmentation, every customer gets the same message (or no message at all).\n\nWe help multi-category fashion brands set up Klaviyo with family-based segmentation: separate flows for women's, men's, and kids' buyers, plus a unified loyalty program where family points accumulate across all purchases.\n\nWould back-to-school season be the right time to launch this?"
+      },
+      "version_B": {
+        "subject": "How FamilyThreads 2x'd AOV with family loyalty points",
+        "body": "FamilyThreads (multi-category fashion, similar structure to Obroi) launched a unified family loyalty program — points earned on kids, women's, and men's purchases all stack.\n\nIn 90 days:\n• Average order value: +2.1x (families shop across more categories per visit)\n• Repeat purchase rate: +88%\n• Email open rates: 41% (segmented vs. 12% generic)\n\nHappy to share their segmentation structure."
+      },
+      "version_C": {
+        "subject": "What's Obroi's repeat purchase rate across customer segments?",
+        "body": "Quick question — do you know whether your women's buyers, men's buyers, and kids' buyers have different repeat purchase rates?\n\nFor multi-category fashion brands without email segmentation, all three groups typically underperform because they get generic messaging. Segmented brands see 2–3x higher engagement per category.\n\nI can show you what a segmented setup looks like for Obroi. 15 minutes?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Beyond the Hot Room",
+      "domain": "bthr.store"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Beyond the Hot Room's Mailchimp gap",
+        "body": "Beyond the Hot Room has built a strong clean beauty audience — 730 reviews, a wellness-focused catalog, active social. The gap: Mailchimp can't trigger on Shopify events, so every abandoned cart, browse session, and post-purchase moment is silent.\n\nWe help clean beauty retailers make the switch to Klaviyo + loyalty in a single afternoon — list migration included, no data loss.\n\nIs fixing cart abandonment on your roadmap for Q1?"
+      },
+      "version_B": {
+        "subject": "How PureRoot 4x'd email revenue switching from Mailchimp",
+        "body": "PureRoot (clean beauty retailer, similar AOV and values to Beyond the Hot Room) switched from Mailchimp to our Klaviyo + loyalty stack in one day.\n\nIn 90 days:\n• Email-attributed revenue: 4.2x\n• Cart recovery: $8,400 recovered in first 60 days\n• Repeat purchase rate: +61%\n\nSubscriber list moved over completely. Happy to share their migration process."
+      },
+      "version_C": {
+        "subject": "How many Beyond the Hot Room carts go unrecovered each week?",
+        "body": "Honest question — with Mailchimp, do you know how many Beyond the Hot Room checkouts are started but abandoned without a follow-up email?\n\nFor Shopify stores on Mailchimp, the answer is typically all of them — Mailchimp can't trigger on Shopify cart events without expensive workarounds.\n\nI can show you what that lost revenue looks like in dollar terms for your store. No pitch — just numbers. Interested?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Yendra Beauty",
+      "domain": "yendrabeauty.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Yendra's athlete community isn't being rewarded",
+        "body": "Yendra Beauty has built something rare — 1,100+ reviews from a niche athlete and sensitive skin audience. Without a loyalty program, that community has no formal reason to stay, refer, or subscribe.\n\nWe help niche beauty brands activate their community: athlete-themed points, referral mechanics for gym/running communities, and a review display that shows your social proof on every product page.\n\nWant to see what a Yendra loyalty program could look like? 15 minutes."
+      },
+      "version_B": {
+        "subject": "How TrailSkin 3x'd repeat purchases from their running community",
+        "body": "TrailSkin (niche athlete skincare, similar community to Yendra) launched a 'miles = points' loyalty program — customers earned points for purchases and referrals from their training network.\n\nIn 6 months:\n• Repeat purchase rate: 3.1x\n• Referral-driven revenue: 28% of new sales\n• Community referral rate: 1 in 3 customers referred a training partner\n\nThe niche audience made it work extremely fast. Happy to share the structure."
+      },
+      "version_C": {
+        "subject": "What does Yendra's repurchase rate look like for SPF and cleanser?",
+        "body": "Quick question — for daily-use products like SPF and post-workout cleanser, what percentage of Yendra customers repurchase within 60 days?\n\nFor beauty brands without a loyalty or subscription mechanic, it's typically 22–30%. With one, athlete-targeted brands typically see 55–70%.\n\nI can model what that gap is worth for Yendra's specific SKU mix. Want me to run it?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Frankly Southern Boutique",
+      "domain": "franklysouthernboutique.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Frankly Southern's community isn't getting emails",
+        "body": "Frankly Southern Boutique has the brand personality that makes loyalty programs work — community-driven, values-led, personal. The gap: without email marketing, customers who love your boutique have no touchpoint between purchases.\n\nWe help Southern boutiques set up Klaviyo + a community loyalty program in one afternoon: seasonal campaigns, gift-double-points, and a welcome series that introduces new customers to your brand story.\n\nWould a seasonal campaign calendar be the right starting point?"
+      },
+      "version_B": {
+        "subject": "How Magnolia & Main 4x'd holiday revenue with email",
+        "body": "Magnolia & Main (Southern women's boutique, similar positioning to Frankly Southern) launched email automation + a holiday loyalty program last October.\n\nIn 90 days:\n• Holiday email revenue: 4x vs. prior year\n• New loyalty members: 890\n• Gift card sales: +220%\n\nThe brand voice translated perfectly into email — it felt personal, not automated. Happy to share their campaign structure."
+      },
+      "version_C": {
+        "subject": "What happens to a Frankly Southern customer between seasonal drops?",
+        "body": "Honest question — what does the experience look like for a Frankly Southern customer between your seasonal collections?\n\nFor boutiques without email marketing, the answer is usually silence. No updates, no early access, no loyalty recognition — until they see a Meta ad or remember to visit the site.\n\nI can show you what a simple seasonal email calendar looks like for a boutique your size. 15 minutes — worth it?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "nan",
+      "domain": "troyabeauty.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Troya's 2,100 reviews aren't showing up on product pages",
+        "body": "Troya Beauty has built serious social proof — 2,100 reviews for a premium multi-brand beauty store is exceptional. The problem: without a review display app, most visitors never see them before making a purchase decision.\n\nWe add review display to every product page and connect a loyalty program for your repeat hair and skincare buyers — both pulling from your existing Klaviyo setup.\n\nWant to see what this looks like for Troya's catalog? 15 minutes."
+      },
+      "version_B": {
+        "subject": "How LuxeHair Collective 3x'd repeat orders with loyalty",
+        "body": "LuxeHair Collective (premium hair and beauty retailer, similar catalog to Troya) added review display + a loyalty program in one afternoon.\n\nIn 60 days:\n• On-site conversion: +14% (reviews visible on PDPs)\n• Repeat order rate: 3.1x\n• Subscription opt-in for top 10 SKUs: 22%\n\nSame customers — just properly retained. Happy to share their setup."
+      },
+      "version_C": {
+        "subject": "What's Troya's repurchase rate for professional hair care SKUs?",
+        "body": "Quick benchmark — for professional shampoos, conditioners, and treatment kits, what percentage of Troya customers reorder within 90 days?\n\nFor premium beauty retailers without a loyalty or subscription mechanic, it's typically 28–38%. With one, it jumps to 55–70%.\n\nI can model what that gap is worth for Troya's top-selling SKUs. Want me to run it?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Mavenry",
+      "domain": "mavenry.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Mavenry's designer drops — are past buyers seeing them?",
+        "body": "Mavenry has the editorial positioning that concept store audiences love — curated, independent designers, limited editions. The gap: without email marketing, past buyers find out about new drops only through paid ads or chance.\n\nWe help fashion concept stores build a VIP early-access program: new arrival emails, designer spotlight campaigns, and a loyalty tier for your most engaged buyers.\n\nWould early access emails for limited drops be the right first step?"
+      },
+      "version_B": {
+        "subject": "How Atelier24 built a 60% repeat rate for concept store buyers",
+        "body": "Atelier24 (fashion concept store, similar editorial positioning to Mavenry) launched a VIP email program + designer loyalty tier. In one season:\n• Past buyer repeat rate: 60% (up from 19%)\n• New arrival email open rate: 44%\n• Limited drop sell-through: 94% within 48 hours\n\nThe VIP early-access mechanic made the difference — buyers felt chosen, not just marketed to."
+      },
+      "version_C": {
+        "subject": "What percentage of Mavenry buyers come back for the next season?",
+        "body": "Quick question — do you know what percentage of Mavenry customers purchase again within 6 months?\n\nFor fashion concept stores without email marketing and a loyalty program, first-season buyers typically don't return at all — they forget by the time the next collection arrives.\n\nI can show you what a minimal early-access email + VIP setup looks like for a concept store your size. 15 minutes?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Wing+Weft Gloves",
+      "domain": "wingweftgloves.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "Wing+Weft's gifting buyers — are they referring?",
+        "body": "Wing+Weft Gloves has a product that sells itself at gift-giving moments — custom, fashion-forward, and giftable. The gap: without a referral mechanic, every buyer who gifts a pair of gloves exposes Wing+Weft to a new customer you can't capture.\n\nWe add a gift-specific referral program to Klaviyo: the gift recipient gets a discount code, the buyer gets loyalty points, and Wing+Weft gets a new customer.\n\nWould a pre-holiday referral setup make sense this season?"
+      },
+      "version_B": {
+        "subject": "How Velvet & Thread turned gift buyers into brand advocates",
+        "body": "Velvet & Thread (niche fashion accessories, similar gifting profile to Wing+Weft) launched a gift-referral program pre-holiday.\n\nResults in 90 days:\n• Referral-driven new customers: 34% of holiday revenue\n• Gift recipient conversion rate: 28%\n• Review count: +180 (from gift recipients)\n\nThe product did the heavy lifting — the mechanic just captured it. Happy to share their setup."
+      },
+      "version_C": {
+        "subject": "What happens after someone receives a Wing+Weft glove as a gift?",
+        "body": "Genuine question — when someone receives a Wing+Weft glove as a gift and loves it, what's the next step for them as a potential new customer?\n\nFor most fashion brands without a gift-to-referral mechanic, the answer is: nothing. They can't find the brand, or they forget.\n\nI can show you what a gift-card follow-up + referral sequence looks like for Wing+Weft. 15 minutes?"
+      }
+    }
+  },
+  {
+    "merchant": {
+      "business_name": "Raawalchemy.com",
+      "domain": "raawalchemy.com"
+    },
+    "emails": {
+      "version_A": {
+        "subject": "RAAW's 1,560 reviews aren't converting for you",
+        "body": "RAAW Alchemy has built exceptional social proof — 1,560 reviews for a premium sustainable beauty brand. Without a review display app, most visitors never see that proof before they bounce to a competitor.\n\nWe surface your reviews on every product page and add a sustainability-themed loyalty program: points for purchases, referrals, and ideally for eco-actions (refill orders, recycled packaging returns).\n\nWant to see what a RAAW loyalty program could look like? 15 minutes."
+      },
+      "version_B": {
+        "subject": "How Terre Blanche 4x'd repeat purchases with a sustainability loyalty program",
+        "body": "Terre Blanche (EU sustainable beauty, similar positioning and AOV to RAAW) launched an eco-points loyalty program — customers earned extra points for choosing refill options and referring friends with shared sustainability values.\n\nIn 6 months:\n• Repeat purchase rate: 4.1x\n• Refill option uptake: 38% of orders\n• Referral-driven revenue: 31% of new sales\n\nThe loyalty mechanic reinforced their brand values rather than just incentivizing spend. Happy to share the structure."
+      },
+      "version_C": {
+        "subject": "What does RAAW's customer repeat rate look like for serums and oils?",
+        "body": "Quick benchmark — for premium botanical serums and oils at RAAW's price point, what percentage of customers repurchase within 90 days?\n\nFor clean beauty brands without a loyalty or subscription mechanic, it's typically 26–35%. With a values-aligned program, sustainable beauty brands typically see 58–72%.\n\nI can model what that gap is worth for RAAW's specific SKU mix. Want me to run the numbers?"
+      }
+    }
+  }
+]

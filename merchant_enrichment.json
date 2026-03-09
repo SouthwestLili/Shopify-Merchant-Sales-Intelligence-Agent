@@ -1,0 +1,312 @@
+{
+  "mccc-sportswear.com": {
+    "description": "Fashionable sportswear for every season. Trendy activewear and casual clothing for men and women.",
+    "products": [
+      "Hoodies",
+      "Joggers",
+      "T-Shirts",
+      "Sports Bras",
+      "Jackets"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel"
+    ],
+    "price_range": "$25 – $95",
+    "blog_topics": [
+      "Style Tips",
+      "Season Lookbook",
+      "New Arrivals"
+    ],
+    "social_proof": {
+      "review_count": 320,
+      "has_testimonials": false
+    },
+    "source": "sample"
+  },
+  "shoplsdcouture.com": {
+    "description": "Bold fashion and custom gowns. Couture apparel and statement accessories for the fashion-forward woman.",
+    "products": [
+      "Custom Gowns",
+      "Evening Wear",
+      "Bold Separates",
+      "Accessories",
+      "Bridal"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel",
+      "Klaviyo"
+    ],
+    "price_range": "$120 – $850",
+    "blog_topics": [
+      "Style Inspiration",
+      "Custom Orders",
+      "Event Looks"
+    ],
+    "social_proof": {
+      "review_count": 640,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "theaestheticsloft.com": {
+    "description": "Radiant skin and beauty experts in Milford, CT. Professional skincare treatments and at-home product line.",
+    "products": [
+      "Facials",
+      "Chemical Peels",
+      "Skincare Products",
+      "Gift Cards",
+      "Memberships"
+    ],
+    "tools_detected": [
+      "Google Analytics"
+    ],
+    "price_range": "$65 – $380",
+    "blog_topics": [
+      "Skin Tips",
+      "Treatment Guide",
+      "Seasonal Skin Care"
+    ],
+    "social_proof": {
+      "review_count": 215,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "theskinbarmedispa.com": {
+    "description": "Enhance Your Natural Beauty at TheSkinBar Knoxville. Medical spa offering advanced skin treatments and premium skincare.",
+    "products": [
+      "Botox",
+      "Fillers",
+      "Laser Treatments",
+      "Medical-Grade Skincare",
+      "Memberships"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel",
+      "Klaviyo",
+      "Gorgias"
+    ],
+    "price_range": "$150 – $1,200",
+    "blog_topics": [
+      "Treatment Education",
+      "Before & After",
+      "Skin Health"
+    ],
+    "social_proof": {
+      "review_count": 1840,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "obroi.com": {
+    "description": "Fashion online for women, men, kids and lifestyle. Trendy collections across all categories.",
+    "products": [
+      "Women's Clothing",
+      "Men's Clothing",
+      "Kids Fashion",
+      "Accessories",
+      "Lifestyle"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel"
+    ],
+    "price_range": "$18 – $120",
+    "blog_topics": [
+      "Style Trends",
+      "Family Fashion",
+      "Seasonal Picks"
+    ],
+    "social_proof": {
+      "review_count": 580,
+      "has_testimonials": false
+    },
+    "source": "sample"
+  },
+  "bthr.store": {
+    "description": "Shop for all things clean beauty and skincare products online. Curated selection of non-toxic, wellness-focused beauty brands.",
+    "products": [
+      "Clean Skincare",
+      "Non-Toxic Makeup",
+      "Wellness Products",
+      "Body Care",
+      "Gift Sets"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel",
+      "Mailchimp"
+    ],
+    "price_range": "$24 – $110",
+    "blog_topics": [
+      "Clean Beauty Guide",
+      "Ingredient Spotlight",
+      "Wellness Tips"
+    ],
+    "social_proof": {
+      "review_count": 730,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "yendrabeauty.com": {
+    "description": "Preventative skincare for athletes and sensitive skin. Performance-focused formulas that work as hard as you do.",
+    "products": [
+      "SPF Moisturiser",
+      "Post-Workout Cleanser",
+      "Barrier Repair Serum",
+      "Eye Cream",
+      "Body Lotion"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel",
+      "Klaviyo"
+    ],
+    "price_range": "$32 – $88",
+    "blog_topics": [
+      "Athlete Skincare Tips",
+      "SPF Guide",
+      "Post-Workout Routine",
+      "Sensitive Skin"
+    ],
+    "social_proof": {
+      "review_count": 1120,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "franklysouthernboutique.com": {
+    "description": "Women's fashion with a Southern heart. Boutique clothing, accessories, and gifts for the modern Southern woman.",
+    "products": [
+      "Dresses",
+      "Tops",
+      "Denim",
+      "Accessories",
+      "Gift Items"
+    ],
+    "tools_detected": [
+      "Google Analytics"
+    ],
+    "price_range": "$28 – $115",
+    "blog_topics": [
+      "Style Inspiration",
+      "Southern Living",
+      "Gift Guides"
+    ],
+    "social_proof": {
+      "review_count": 290,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "troyabeauty.com": {
+    "description": "Shop premium hair and beauty brands. Curated selection of professional-grade hair care, skincare, and beauty products.",
+    "products": [
+      "Professional Hair Care",
+      "Premium Skincare",
+      "Beauty Tools",
+      "Hair Color",
+      "Treatment Kits"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel",
+      "Klaviyo",
+      "Searchanise"
+    ],
+    "price_range": "$22 – $165",
+    "blog_topics": [
+      "Hair Care Guides",
+      "Product Reviews",
+      "Salon Secrets",
+      "Beauty Trends"
+    ],
+    "social_proof": {
+      "review_count": 2140,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "mavenry.com": {
+    "description": "MAVENRY — Fashion concept store offering curated contemporary fashion from independent designers.",
+    "products": [
+      "Designer Tops",
+      "Statement Pieces",
+      "Contemporary Dresses",
+      "Accessories",
+      "Limited Editions"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel"
+    ],
+    "price_range": "$45 – $280",
+    "blog_topics": [
+      "Designer Spotlight",
+      "Style Guides",
+      "New Season Arrivals"
+    ],
+    "social_proof": {
+      "review_count": 185,
+      "has_testimonials": false
+    },
+    "source": "sample"
+  },
+  "wingweftgloves.com": {
+    "description": "Fashionable customized gloves. Unique, bespoke gloves designed for style and self-expression.",
+    "products": [
+      "Custom Gloves",
+      "Fashion Gloves",
+      "Occasion Gloves",
+      "Gift Sets",
+      "Accessories"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel",
+      "Klaviyo"
+    ],
+    "price_range": "$55 – $220",
+    "blog_topics": [
+      "Style Tips",
+      "How to Customize",
+      "Occasion Guides"
+    ],
+    "social_proof": {
+      "review_count": 410,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  },
+  "raawalchemy.com": {
+    "description": "RAAW Alchemy — clean, natural and sustainable beauty. Science-backed formulas with ethically sourced botanical ingredients.",
+    "products": [
+      "Facial Serums",
+      "Botanical Oils",
+      "Cleansers",
+      "Moisturisers",
+      "Eye Care"
+    ],
+    "tools_detected": [
+      "Google Analytics",
+      "Meta Pixel",
+      "Klaviyo"
+    ],
+    "price_range": "$38 – $145",
+    "blog_topics": [
+      "Ingredient Science",
+      "Sustainability",
+      "Clean Beauty Guide",
+      "Botanical Research"
+    ],
+    "social_proof": {
+      "review_count": 1560,
+      "has_testimonials": true
+    },
+    "source": "sample"
+  }
+}
