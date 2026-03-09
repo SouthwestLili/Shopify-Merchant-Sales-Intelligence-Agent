@@ -6,6 +6,14 @@
 
 ---
 
+## Demo
+
+![Dashboard](./templates/dashboard.png)
+
+![Detail](./templates/detail.png)
+
+---
+
 ## 1. Background and Core Problem
 
 ### What Problem Are We Solving?

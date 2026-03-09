@@ -6,6 +6,14 @@
 
 ---
 
+## Demo
+
+![Dashboard](./templates/dashboard.png)
+
+![Detail](./templates/detail.png)
+
+---
+
 ## 一、项目背景与核心问题
 
 ### 我们在解决什么问题？
