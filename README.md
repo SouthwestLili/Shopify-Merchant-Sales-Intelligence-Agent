@@ -1,5 +1,23 @@
 # Shopify Merchant Sales Intelligence Agent
 
+## Who Can Use This System
+
+While building it, I realized the same system could actually be useful for multiple players in the Shopify ecosystem.
+
+## [IDEA-EN](./idea-en.md) | [项目构想-中文](./idea-cn.md)
+
+**1️⃣ Shopify itself**
+It could identify merchants who might benefit from products like Shopify Email or Shopify POS.
+
+**2️⃣ Shopify app companies**
+Tools like Klaviyo, Yotpo, and Gorgias constantly need to find merchants who need their products.
+This system detects technology gaps and surfaces high-intent leads automatically.
+
+**3️⃣ Brands or suppliers**
+Manufacturers looking for Shopify stores to sell their products could also use the same system to identify potential partners.
+
+---
+
 ## Overview
 
 This project is a six-stage pipeline:
@@ -48,7 +66,7 @@ filter_shopify_merchants.py  →  shopify_merchants.csv
 ### Input CSV expected columns
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | `domain` | Merchant website domain |
 | `title` | Page title (used for industry keyword matching) |
 | `business_name` | Company name |
@@ -61,7 +79,7 @@ filter_shopify_merchants.py  →  shopify_merchants.csv
 ### Output CSV columns
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | `business_name` | Company name |
 | `domain` | Website domain |
 | `title` | Page title |
@@ -110,7 +128,7 @@ python filter_shopify_merchants.py \
 ### Arguments
 
 | Argument | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `--input` | `tech_stack.csv` | Path to input CSV file |
 | `--industries` | `fashion beauty` | One or more industry keywords |
 | `--output` | `shopify_merchants.csv` | Output CSV path |
@@ -123,7 +141,7 @@ python filter_shopify_merchants.py \
 
 Use the following prompt to collect or request the tech-stack dataset from a data provider or scraping tool:
 
-```
+```text
 Collect a CSV dataset of e-commerce merchants with the following fields:
 
 - domain: the merchant's website domain
@@ -156,7 +174,7 @@ Output format: UTF-8 encoded CSV.
 ### Data extracted
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | `description` | Meta description or first paragraph |
 | `products` | Collection slugs from `/collections/` links |
 | `price_range` | Min–max prices visible on homepage |
@@ -183,7 +201,7 @@ python scrape_merchants.py
 ### Scraper arguments
 
 | Argument | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `--input` | `shopify_merchants.csv` | Filtered merchant CSV |
 | `--output` | `merchant_enrichment.json` | Output JSON file |
 
@@ -226,7 +244,7 @@ export FIRECRAWL_API_KEY="your-firecrawl-key"   # optional — enables richer ex
 The prompt instructs Claude to return a JSON object containing:
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | `MERCHANT SNAPSHOT` | 2–3 sentence summary of what they sell and their scale |
 | `PAIN POINTS DETECTED` | 3–5 tech stack gaps or operational problems |
 | `OPPORTUNITY SCORE` | 1–10 fit score with one-sentence reasoning |
@@ -252,7 +270,7 @@ python analyze_merchants.py \
 ### Analyzer arguments
 
 | Argument | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `--input` | `shopify_merchants.csv` | Filtered merchant CSV |
 | `--saas` | Email marketing + loyalty app description | Your product/service description |
 | `--output` | `merchant_analysis.json` | Output JSON file |
@@ -298,7 +316,7 @@ export ANTHROPIC_API_KEY="your-api-key"
 ### Email versions
 
 | Version | Strategy |
-|---|---|
+| --- | --- |
 | A | Problem-focused — leads with the merchant's detected pain point |
 | B | Social proof — leads with a similar customer success story |
 | C | Curiosity hook — leads with a provocative question |
@@ -321,7 +339,7 @@ python generate_emails.py \
 ### Email generator arguments
 
 | Argument | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `--input` | `merchant_analysis.json` | Analysis JSON from analyze_merchants.py |
 | `--output` | `merchant_emails.json` | Output JSON file |
 
@@ -367,7 +385,7 @@ python generate_emails.py \
 ### Chunking strategy
 
 | Chunk | Content |
-|---|---|
+| --- | --- |
 | `::identity` | Business name, title, description, products, price range, country |
 | `::techstack` | All detected tools, tech spend, tool category flags |
 | `::social` | Blog topics, review count, testimonials, industry, size |
@@ -391,7 +409,7 @@ python build_rag.py build --query "merchants using Klaviyo but no loyalty progra
 **`build` subcommand:**
 
 | Argument | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `--csv` | `shopify_merchants.csv` | Filtered merchant CSV |
 | `--enrichment` | `merchant_enrichment.json` | Scraped enrichment JSON |
 | `--query` | _(empty)_ | Optional query to run immediately after build |
@@ -466,7 +484,7 @@ Runs an autonomous agentic loop using 4 Claude tools to find prospects, enrich t
 ### Tools available to the agent
 
 | Tool | Description |
-|---|---|
+| --- | --- |
 | `search_merchants(query, top_k)` | Natural-language search over the ChromaDB merchant index |
 | `scrape_website(domain)` | Live homepage scrape: description, products, tools detected, prices |
 | `analyze_merchant(domain, profile)` | Claude sales analysis: score, pain points, hooks, recommended approach |
@@ -574,6 +592,7 @@ python dashboard.py
 | Merchant cards | Score circle, snapshot, tool chips, pain point count |
 | Detail modal | Full analysis — pain points, hooks, recommended approach |
 | Email preview | Switch between A/B/C versions; one-click copy |
+| 3D View | Interactive 3D scatter plot of merchants by score, industry, and tool coverage |
 
 ### Data sources loaded
 
@@ -585,6 +604,31 @@ python dashboard.py
 | `shopify_merchants.csv` | Country, tech spend |
 
 The dashboard works even if some files are missing — it shows whatever data is available.
+
+---
+
+## Module: `create_sample_data.py`
+
+### Purpose
+
+Reads `shopify_merchants.csv` (the real filtered merchants) and generates realistic sample output files for dashboard testing — without spending any API credits or running the full pipeline.
+
+### Generated files
+
+| File | Description |
+| --- | --- |
+| `merchant_analysis.json` | Opportunity scores, snapshots, pain points, hooks, recommended approach |
+| `merchant_emails.json` | A/B/C cold email versions per merchant |
+| `merchant_enrichment.json` | Tools detected, price range, products, social proof |
+
+### Running it
+
+```bash
+python create_sample_data.py
+python dashboard.py   # then open http://localhost:5000
+```
+
+The script uses pre-written sample data keyed by domain from `shopify_merchants.csv`. Any merchant not explicitly defined falls back to auto-generated generic data so the script never fails on new merchants.
 
 ---
 

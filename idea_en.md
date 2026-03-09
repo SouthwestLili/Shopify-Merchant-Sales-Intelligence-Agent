@@ -6,14 +6,6 @@
 
 ---
 
-## Demo
-
-![Dashboard](./templates/dashboard.png)
-
-![Detail](./templates/detail.png)
-
----
-
 ## 1. Background and Core Problem
 
 ### What Problem Are We Solving?
@@ -507,6 +499,28 @@ python dashboard.py             # open http://localhost:5000
 | Multi-language emails | Add a language parameter to the email prompt for French, German, etc. |
 | Slack notifications | Push a high-score merchant summary to a Slack channel when Agent finishes |
 | Larger datasets | Swap `tech_stack.csv` for a larger data source — the system scales linearly |
+
+---
+
+## 8. Who Can Use This System
+
+While building it, I realized the same system could actually be useful for multiple players in the Shopify ecosystem — not just a SaaS company like Lili's.
+
+**1️⃣ Shopify itself**
+It could identify merchants who might benefit from products like Shopify Email or Shopify POS, supporting internal product promotion decisions.
+
+**2️⃣ Shopify app companies**
+Tools like Klaviyo, Yotpo, and Gorgias constantly need to find merchants who need their products.
+This system detects technology gaps and surfaces high-intent leads automatically — no manual sifting required.
+
+**3️⃣ Brands or suppliers**
+Manufacturers looking to distribute their products through Shopify stores could use the same system to discover and evaluate potential retail partners.
+
+| User | Core Need | System Capability |
+| --- | --- | --- |
+| Shopify platform | Promote native apps to the right merchants | Filter + analyze merchant pain points |
+| App companies | Find merchants with tech stack gaps | Tool detection + opportunity scoring |
+| Brands / suppliers | Identify suitable distribution partners | Merchant profiles + personalized outreach |
 
 ---
 
