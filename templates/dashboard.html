@@ -130,12 +130,11 @@
     /* ── 3D Plot container ──────────────── */
     #plot3d {
       display: none;
-      height: 560px;
       padding: 0 2rem 2rem;
     }
     #plot3dInner {
       width: 100%;
-      height: 100%;
+      height: 540px;
       border-radius: 14px;
       overflow: hidden;
     }
@@ -477,6 +476,7 @@
   let CURRENT_EMAILS = {};
   let CURRENT_EMAIL_KEY = "A";
   let CURRENT_VIEW = "list";
+  let PLOT_LISTENER_ADDED = false;
   const modal = new bootstrap.Modal(document.getElementById("detailModal"));
 
   // ── Boot ─────────────────────────────────────────────────────────────────
@@ -504,8 +504,8 @@
     CURRENT_VIEW = view;
     document.getElementById("btnList").classList.toggle("active", view === "list");
     document.getElementById("btn3d").classList.toggle("active",   view === "3d");
-    document.getElementById("merchantGrid").style.display = view === "list" ? "" : "none";
-    document.getElementById("plot3d").style.display       = view === "3d"   ? "" : "none";
+    document.getElementById("merchantGrid").style.display = view === "list" ? "grid"  : "none";
+    document.getElementById("plot3d").style.display       = view === "3d"   ? "block" : "none";
     if (view === "3d") {
       const filtered = getFiltered();
       renderPlot3D(filtered);
@@ -605,15 +605,16 @@
 
     Plotly.react("plot3dInner", traces, layout, { responsive: true, displaylogo: false });
 
-    // Click → open detail modal
-    const plotEl = document.getElementById("plot3dInner");
-    plotEl.removeAllListeners && plotEl.removeAllListeners("plotly_click");
-    plotEl.on("plotly_click", function(data) {
-      if (!data.points.length) return;
-      const domain = data.points[0].customdata;
-      const m = ALL_MERCHANTS.find(x => x.domain === domain);
-      if (m) showModal(m);
-    });
+    // Attach click listener once only — Plotly accumulates listeners on repeated .on() calls
+    if (!PLOT_LISTENER_ADDED) {
+      PLOT_LISTENER_ADDED = true;
+      document.getElementById("plot3dInner").on("plotly_click", function(data) {
+        if (!data.points.length) return;
+        const domain = data.points[0].customdata;
+        const m = ALL_MERCHANTS.find(x => x.domain === domain);
+        if (m) showModal(m);
+      });
+    }
   }
 
   // ── Grid rendering ────────────────────────────────────────────────────────
